@@ -1,0 +1,35 @@
+
+.caja_padre {
+display: flex;
+}
+
+
+header {
+    background: #282828;
+    padding: 3px;
+   
+}
+header ul{
+    display: flex;
+    list-style: none;
+}
+
+
+header ul li a {
+    color: white;
+}
+
+.container {
+    width: 60%;
+    display: flex;
+}
+.container img {
+    width: 30%;
+}
+.barra-Lateral {
+    width: 40%;
+    display: flex;
+}
+.barra-Lateral img {
+    width: 30%;
+}

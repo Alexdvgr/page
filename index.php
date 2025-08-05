@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PHP Curso - Registro</title>
-    <meta name="description" content="Sistema de registro de personas para proyecto académico">
+    <meta name="description" content="Sistema de registro de personas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap y fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css" rel="stylesheet">
@@ -162,14 +162,18 @@
                   $i += 1;
               ?>
               <tr>
-                <td><?php echo $i; ?></td>
-                <td><?php echo htmlspecialchars($fila["Nombre"], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($fila["Apellido"], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($fila["Edad"], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($fila["Correo"], ENT_QUOTES, 'UTF-8'); ?></td>
-                <td><?php echo htmlspecialchars($fila["Telefono"], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
-                  <a href="#" class="btn btn-success btn-sm" title="Editar"><i class="bi bi-pencil-square"></i></a>
+                  <?php echo $i; ?>
+                </td>
+                <td><?php echo htmlspecialchars($fila["Nombre"]); ?></td>
+                <td><?php echo htmlspecialchars($fila["Apellido"]); ?></td>
+                <td><?php echo htmlspecialchars($fila["Edad"]); ?></td>
+                <td><?php echo htmlspecialchars($fila["Correo"]); ?></td>
+                <td><?php echo htmlspecialchars($fila["Telefono"]); ?></td>
+                <td>
+                  <a href="update.php?id=<?php echo $fila['Id']; ?>" class="btn btn-success btn-sm" title="Editar">
+                    <i class="bi bi-pencil-square"></i>
+                  </a>
                 </td>
                 <td>
                   <a href="#" class="btn btn-danger btn-sm" title="Eliminar"><i class="bi bi-trash"></i></a>
@@ -215,15 +219,30 @@
   // Mostrar toast cuando el registro es exitoso
   window.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
+    
+    // Verificar mensaje de éxito en registro
     if (params.get('success') === '1') {
       const toast = new bootstrap.Toast(document.getElementById('registroToast'));
+      document.querySelector('#registroToast .toast-body').innerHTML = 
+        '<i class="bi bi-check-circle-fill"></i> Registro exitoso';
       toast.show();
-      // Eliminar parámetro de URL sin recargar la página
+    }
+    
+    // Verificar mensaje de éxito en actualización
+    if (params.get('success') === '2') {
+      const toast = new bootstrap.Toast(document.getElementById('registroToast'));
+      document.querySelector('#registroToast .toast-body').innerHTML = 
+        '<i class="bi bi-check-circle-fill"></i> Registro actualizado correctamente';
+      toast.show();
+    }
+    
+    // Limpiar parámetros de URL
+    if (params.has('success')) {
       params.delete('success');
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       window.history.replaceState({}, '', newUrl);
     }
-  });
+});
   </script>
 </body>
 </html>

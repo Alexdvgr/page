@@ -38,6 +38,7 @@ if ($consulta->rowCount() == 0) {
 $registro = $consulta->fetch(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -101,6 +102,10 @@ $registro = $consulta->fetch(PDO::FETCH_ASSOC);
         </div>
       </nav>
     </header>
+=======
+
+<?php $pageTitle = 'Editar Registro - PHP Curso'; include 'layouts/header.php'; ?>
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
 
     <!-- Sección de formulario de edición -->
     <section class="container my-5">
@@ -116,8 +121,16 @@ $registro = $consulta->fetch(PDO::FETCH_ASSOC);
             
             <!-- Formulario de edición -->
             <form action="Controller/UpdateController.php" method="POST">
+<<<<<<< HEAD
               <!-- Campo oculto para el ID -->
               <input type="hidden" name="id" value="<?php echo htmlspecialchars($registro['Id']); ?>">
+=======
+
+              <div class="mb-3">
+                <label for="Id" class="form-label">ID</label>
+                <input type="text" class="form-control" id="Id" name="Id" 
+                        placeholder="<?php echo htmlspecialchars($registro['Id']); ?>" disabled>
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
               
               <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
@@ -165,6 +178,7 @@ $registro = $consulta->fetch(PDO::FETCH_ASSOC);
     </section>
   </div>
 
+<<<<<<< HEAD
   <!-- Pie de página -->
   <footer>
     <small>© <?php echo date('Y'); ?> PHP Curso - Proyecto de Registro</small>
@@ -174,3 +188,6 @@ $registro = $consulta->fetch(PDO::FETCH_ASSOC);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+=======
+  <?php include 'layouts/footer.php'; ?>
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)

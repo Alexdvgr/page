@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PHP Curso - Registro</title>
-    <meta name="description" content="Sistema de registro de personas">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap y fuentes -->
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- CSS personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/modal.css">
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <header>
-    <nav class="navbar navbar-expand-lg mb-4">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#"><i class="bi bi-code-slash"></i> PHP CURSO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+<?php $pageTitle = 'PHP Curso - Registro'; include 'layouts/header.php'; ?>
 
   <!-- Sección Hero -->
   <section class="hero-section">
@@ -207,19 +163,16 @@
     </div>
   </div>
 
-  <!-- Pie de página -->
-  <footer>
-    <small>© <?php echo date('Y'); ?> PHP Curso - Proyecto de Registro</small>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <?php include 'layouts/footer.php'; ?>
   <script src="js/modal.js"></script>
   <script>
   // Mostrar toast cuando el registro es exitoso
   window.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
+<<<<<<< HEAD
     
+=======
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Verificar mensaje de éxito en registro
     if (params.get('success') === '1') {
       const toast = new bootstrap.Toast(document.getElementById('registroToast'));
@@ -227,7 +180,10 @@
         '<i class="bi bi-check-circle-fill"></i> Registro exitoso';
       toast.show();
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Verificar mensaje de éxito en actualización
     if (params.get('success') === '2') {
       const toast = new bootstrap.Toast(document.getElementById('registroToast'));
@@ -235,14 +191,23 @@
         '<i class="bi bi-check-circle-fill"></i> Registro actualizado correctamente';
       toast.show();
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Limpiar parámetros de URL
     if (params.has('success')) {
       params.delete('success');
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       window.history.replaceState({}, '', newUrl);
     }
+<<<<<<< HEAD
 });
   </script>
 </body>
 </html>
+=======
+  });
+  </script>
+  <?php include 'layouts/footer.php'; ?>
+>>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)

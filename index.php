@@ -169,10 +169,6 @@
   // Mostrar toast cuando el registro es exitoso
   window.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
-<<<<<<< HEAD
-    
-=======
->>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Verificar mensaje de éxito en registro
     if (params.get('success') === '1') {
       const toast = new bootstrap.Toast(document.getElementById('registroToast'));
@@ -180,10 +176,6 @@
         '<i class="bi bi-check-circle-fill"></i> Registro exitoso';
       toast.show();
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Verificar mensaje de éxito en actualización
     if (params.get('success') === '2') {
       const toast = new bootstrap.Toast(document.getElementById('registroToast'));
@@ -191,23 +183,12 @@
         '<i class="bi bi-check-circle-fill"></i> Registro actualizado correctamente';
       toast.show();
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)
     // Limpiar parámetros de URL
     if (params.has('success')) {
       params.delete('success');
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       window.history.replaceState({}, '', newUrl);
     }
-<<<<<<< HEAD
-});
-  </script>
-</body>
-</html>
-=======
   });
   </script>
   <?php include 'layouts/footer.php'; ?>
->>>>>>> f2eb8cf (Refactorización: mover el layout compartido a la carpeta layouts y actualizar las páginas para usar includes)

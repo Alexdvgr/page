@@ -1,5 +1,4 @@
 <?php
-// filepath: c:\xampp\htdocs\pagina1\Controller\UpdateController.php
 /**
  * Controlador para actualizar registros
  * Recibe los datos del formulario y actualiza la base de datos

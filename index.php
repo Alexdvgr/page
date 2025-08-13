@@ -163,7 +163,6 @@
     </div>
   </div>
 
-  <?php include 'layouts/footer.php'; ?>
   <script src="js/modal.js"></script>
   <script>
   // Mostrar toast cuando el registro es exitoso
